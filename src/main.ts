@@ -2,7 +2,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
-import { INestApplication, Logger, UnprocessableEntityException, ValidationPipe } from '@nestjs/common';
+import {
+  ImATeapotException,
+  INestApplication,
+  Logger,
+  UnprocessableEntityException,
+  ValidationPipe,
+} from '@nestjs/common';
 import { HttpExceptionFilter } from './common/exceptions/httpExceptionFilter';
 
 // Function to start the server on the specified port
@@ -20,7 +26,27 @@ const setupNestApp = (app: INestApplication) => {
 
 // Function to enable CORS (Cross-Origin Resource Sharing)
 const setupCors = (app: INestApplication) => {
-  app.enableCors({ origin: true });
+  const whitelist = ['http://localhost:3000', 'http://localhost:4000', 'https://hello-niyo.tiiny.site/'];
+  app.enableCors({
+    allowedHeaders: ['content-type'],
+    origin: function (origin, callback) {
+      if (!origin) {
+        callback(null, true);
+        return;
+      }
+      if (
+        whitelist.includes(origin) || // Checks your whitelist
+        !!origin.match(/hello-niyo.tiiny\.site$/) // Overall check for your domain
+      ) {
+        console.log('allowed cors for:', origin);
+        callback(null, true);
+      } else {
+        console.log('blocked cors for:', origin);
+        callback(new ImATeapotException('Not allowed by CORS'), false);
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+  });
 };
 
 // Function to create a validation pipe with common configuration options (DTO)
