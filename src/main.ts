@@ -26,7 +26,11 @@ const setupNestApp = (app: INestApplication) => {
 
 // Function to enable CORS (Cross-Origin Resource Sharing)
 const setupCors = (app: INestApplication) => {
-  const whitelist = ['http://localhost:3000', 'http://localhost:4000', 'https://hello-niyo.tiiny.site/'];
+  const whitelist = [
+    'http://localhost:3000',
+    'http://localhost:4000',
+    'https://robert-hello-niyo-production.up.railway.app',
+  ];
   app.enableCors({
     allowedHeaders: ['content-type'],
     origin: function (origin, callback) {
@@ -35,8 +39,10 @@ const setupCors = (app: INestApplication) => {
         return;
       }
       if (
-        whitelist.includes(origin) || // Checks your whitelist
-        !!origin.match(/hello-niyo.tiiny\.site$/) // Overall check for your domain
+        whitelist.includes(origin) ||
+        (origin &&
+          typeof origin === 'string' &&
+          origin.match(/^https:\/\/robert-hello-niyo-production\.up\.railway\.app$/)) // Overall check for your domain
       ) {
         console.log('allowed cors for:', origin);
         callback(null, true);
