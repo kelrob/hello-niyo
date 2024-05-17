@@ -9,7 +9,7 @@ import { HttpExceptionFilter } from './common/exceptions/httpExceptionFilter';
 const startServer = async (app: INestApplication) => {
   const configService = app.get(ConfigService);
   const port = configService.get('port');
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
 };
 
 // Function to configure global pipes and filters for the application

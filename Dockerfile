@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18-alpine
+FROM --platform=linux/amd64 node:18-alpine
 
 # Install Python and other dependencies
 RUN apk add --no-cache python3 make g++
@@ -22,5 +22,8 @@ RUN npm run build
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Define the command to run the application
-CMD ["npm", "run", "start:prod"]
+#COPY entrypoint.sh /usr/src/app/
+RUN chmod +x /usr/src/app/entrypoint.sh
+
+# Set the entry point command
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
