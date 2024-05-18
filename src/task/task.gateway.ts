@@ -11,7 +11,7 @@ import {
 import { Server } from 'socket.io';
 import { TaskResponse } from './dto/response/task.response';
 
-@WebSocketGateway()
+@WebSocketGateway({ cors: true })
 export class TaskGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer() io: Server;
   private readonly logger = new Logger(TaskGateway.name);
