@@ -30,6 +30,7 @@ const setupCors = (app: INestApplication) => {
     'http://localhost:3000',
     'http://localhost:4000',
     'https://robert-hello-niyo-production.up.railway.app',
+    'https://hello-niyo.tiiny.site',
   ];
   app.enableCors({
     allowedHeaders: ['content-type'],
@@ -40,9 +41,7 @@ const setupCors = (app: INestApplication) => {
       }
       if (
         whitelist.includes(origin) ||
-        (origin &&
-          typeof origin === 'string' &&
-          origin.match(/^https:\/\/robert-hello-niyo-production\.up\.railway\.app$/)) // Overall check for your domain
+        (origin && typeof origin === 'string' && origin.match(/^https:\/\/hello-niyo\.tinny\.site$/))
       ) {
         console.log('allowed cors for:', origin);
         callback(null, true);
