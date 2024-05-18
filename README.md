@@ -1,73 +1,100 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Niyo Task
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Niyo Task is a simple task management app that requires authentication functionality and a socket to stream the data
+created In real-time. This is needed as we need to monitor real-time updates and personalized task management.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project was designed using `NestJS` as a framework and `TypeScript` as a Language `PostgreSQL` for the database
+and `TypeORM` as the ORM.
 
-## Description
+## **System Requirements**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Before cloning the repo, ensure that your system meets the following requirements:
 
-## Installation
+### Software Requirements
 
-```bash
-$ npm install
-```
+- NodeJS installed on your laptop
 
-## Running the app
+### Application Requirements
 
-```bash
-# development
-$ npm run start
+To test the API, you need the below installed on your laptop
 
-# watch mode
-$ npm run start:dev
+- Postman
 
-# production mode
-$ npm run start:prod
-```
+## Running the Application
 
-## Test
+To run the application, kindly visit the repo https://github.com/kelrob/hello-niyo and clone the application into your
+machine.
 
-```bash
-# unit tests
-$ npm run test
+### **Running the application locally**
 
-# e2e tests
-$ npm run test:e2e
+1. Create a `.env` file in the root directory of the cloned application
+2. Copy the content of the `.env.example` file into the newly created `.env` file.
+3. Provide the values for each of the variables in your `.env` file
+4. Run the following command in the root directory
 
-# test coverage
-$ npm run test:cov
-```
+    ```bash
+    npm install
+    ```
 
-## Support
+5. The application will be installed in your system locally and ready to run
+6. Now run the command below to start the application
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+    ```bash
+    npm run start:dev
+    ```
 
-## Stay in touch
+7. To run the test you can run (Optional)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+    ```bash
+    npm run test
+    ```
 
-## License
+8. Your application should start running on `localhost:${PORT}`
 
-Nest is [MIT licensed](LICENSE).
+   PORT = value defined in your PORT `.env` file.
+
+### Running the Application via Docker
+
+This app is also containerized via docker. To run this application on your local device via Docker, ensure you have
+Docker installed.
+
+1. Create a `.env` file in the root directory of the cloned application
+2. Copy the content of the `.env.example` file into the newly created `.env` file.
+3. Provide the values for each of the variables in your `.env` file
+4. Run the following command in the root directory
+
+    ```bash
+    docker-compose build --no-cache
+    ```
+
+5. Now run the command below to start the spin up the containers
+
+    ```bash
+    docker-compose up -d
+    ```
+
+6. Your application should start running on `localhost:3000`
+
+### **Running the application Online**
+
+1. The application has already been set up online so you do not need to do anything to set it up online.
+
+The app is running on
+https://robert-hello-niyo-production.up.railway.app/api/v1/
+
+## Viewing the Stream
+
+Once a new task is created, using the base url above, you can view the stream in realtime here
+https://hello-niyo.tiiny.site/
+
+## API Documentation
+
+You can view the documentation via https://documenter.getpostman.com/view/26868191/2sA3JT3yHh
+
+## Technical Documentation
+
+https://flat-exhaust-cf5.notion.site/Niyo-Assessment-Technical-Documentation-9e3a0efe332c4c66a8fe8b733be90107
+
+## ERDIAGRAM
+
+
