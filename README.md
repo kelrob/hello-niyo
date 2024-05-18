@@ -81,11 +81,16 @@ Docker installed.
 
 The app is running on
 https://robert-hello-niyo-production.up.railway.app/api/v1/
+![Screenshot 2024-05-18 030422](https://github.com/kelrob/hello-niyo/assets/11693108/5684a18b-bd3b-4f95-a21f-19f3111fdf02)
+
 
 ## Viewing the Stream
 
-Once a new task is created, using the base url above, you can view the stream in realtime here
-https://hello-niyo.tiiny.site/
+Once a new task is created, using the base url above, you can view the stream in real-time here
+https://hello-niyo.tiiny.site/ - Sample Below
+![image](https://github.com/kelrob/hello-niyo/assets/11693108/84454cf3-babd-4573-a4b2-5614d4035116)
+
+
 
 ## API Documentation
 
@@ -96,5 +101,6 @@ You can view the documentation via https://documenter.getpostman.com/view/268681
 https://flat-exhaust-cf5.notion.site/Niyo-Assessment-Technical-Documentation-9e3a0efe332c4c66a8fe8b733be90107
 
 ## ERDIAGRAM
+![Untitled (3)](https://github.com/kelrob/hello-niyo/assets/11693108/6209e8c4-d879-4a01-9c3b-7e37eceb8af3)
 
 
