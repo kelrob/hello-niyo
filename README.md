@@ -87,7 +87,7 @@ https://robert-hello-niyo-production.up.railway.app/api/v1/
 ## Viewing the Stream
 
 Once a new task is created, using the base url above, you can view the stream in real-time here
-https://hello-niyo.tiiny.site/ - Sample Below
+https://hello-niyo-websocket.vercel.app/ - Sample Below
 ![image](https://github.com/kelrob/hello-niyo/assets/11693108/84454cf3-babd-4573-a4b2-5614d4035116)
 
 
